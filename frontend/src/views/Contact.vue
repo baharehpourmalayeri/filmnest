@@ -12,7 +12,7 @@ const handleClick = () => {
     message: message.value,
   };
   console.log(JSON.stringify(formData));
-  fetch("http://localhost:8080/contact", {
+  fetch("/contact", {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

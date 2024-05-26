@@ -21,7 +21,7 @@ watch(
 );
 
 function handleLike() {
-  fetch("http://localhost:8080/film/like/" + props.id, {
+  fetch("/film/like/" + props.id, {
     method: "PUT",
   })
     .then((response) => response.json())

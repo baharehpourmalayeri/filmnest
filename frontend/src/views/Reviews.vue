@@ -26,13 +26,13 @@ interface Review {
 const fetchReviews = () => {
   const film_id = route.query.film_id;
   if (film_id) {
-    fetch("http://localhost:8080/reviews?filmId=" + film_id)
+    fetch("/reviews?filmId=" + film_id)
       .then((response) => response.json())
       .then((result) => {
         reviews.value = result;
       });
   } else {
-    fetch("http://localhost:8080/reviews")
+    fetch("/reviews")
       .then((response) => response.json())
       .then((result) => {
         reviews.value = result;

@@ -9,7 +9,7 @@ const handleClick = () => {
   let formData = {
     email: email.value,
   };
-  fetch("http://localhost:8080/subscribe", {
+  fetch("/subscribe", {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

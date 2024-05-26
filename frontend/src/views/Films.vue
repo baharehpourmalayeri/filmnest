@@ -27,14 +27,14 @@ const films = ref<Film[]>([]);
 const genre = ref<Genre>();
 
 const fetchGenre = () => {
-  fetch("http://localhost:8080/genre/" + route.params.category)
+  fetch("/genre/" + route.params.category)
     .then((response) => response.json())
     .then((result) => {
       genre.value = result;
     });
 };
 const fetchFilms = () => {
-  fetch("http://localhost:8080/films?genre=" + route.params.category)
+  fetch("/films?genre=" + route.params.category)
     .then((response) => response.json())
     .then((result) => {
       films.value = result;

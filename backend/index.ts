@@ -1,26 +1,34 @@
-const express = require("express");
+const express = require("express"),
+  path = require("path");
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+// to publish both frontend and backend in one service in render
+app.use(express.static(path.join(path.resolve(), "dist")));
+
+// import config module and database module
 const dotenv = require("dotenv"),
   { Client } = require("pg");
 
+// load configs(.env file)
 dotenv.config();
 
+// connect to postgres db
 const client = new Client({
   connectionString: process.env.PGURI,
 });
-
 client.connect();
 
+// API to get list of genres
 app.get("/genres", async (request, response) => {
   const genres = await client.query("SELECT * FROM genres ORDER BY id");
   return response.status(200).json(genres.rows);
 });
 
+// API to get a genre by id
 app.get("/genre/:id", async (request, response) => {
   const { id } = request.params;
   if (!id) {
@@ -33,6 +41,7 @@ app.get("/genre/:id", async (request, response) => {
   return response.json(genre.rows[0]);
 });
 
+// API to get list of films by genre id in query parameters
 app.get("/films", async (request, response) => {
   const { genre } = request.query;
   if (!genre) {
@@ -45,6 +54,7 @@ app.get("/films", async (request, response) => {
   return response.json(films.rows);
 });
 
+// API to like a film by filem id
 app.put("/film/like/:id", async (request, response) => {
   const { id } = request.params;
   if (!id) {
@@ -58,6 +68,7 @@ app.put("/film/like/:id", async (request, response) => {
   return response.status(201).json({ success: true });
 });
 
+// API to save contact us information
 app.post("/contact", async (request, response) => {
   const { name, email, message } = request.body;
   if (!name || !email || !message) {
@@ -70,6 +81,7 @@ app.post("/contact", async (request, response) => {
   return response.status(201).json({ success: true });
 });
 
+// API to save subscription requests
 app.post("/subscribe", async (request, response) => {
   const { email } = request.body;
   if (!email) {
@@ -79,6 +91,7 @@ app.post("/subscribe", async (request, response) => {
   return response.status(201).json({ success: true });
 });
 
+// API to get all reviews (optional filter by film id)
 app.get("/reviews", async (request, response) => {
   const { filmId } = request.query;
   if (filmId) {

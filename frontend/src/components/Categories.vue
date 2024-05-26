@@ -9,7 +9,7 @@ interface Genre {
 
 const genres = ref<Genre[]>([]);
 
-fetch("http://localhost:8080/genres")
+fetch("/genres")
   .then((response) => response.json())
   .then((result) => {
     console.log(result);
