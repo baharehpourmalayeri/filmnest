@@ -27,8 +27,8 @@ Backend
 
 1. Clone the Repository:
 
-git clone https://github.com/yourusername/film-review-website.git
-cd film-review-website
+git clone https://github.com/yourusername/filmnest.git
+cd filmnest
 
 2. Set Up the Backend
 
@@ -39,7 +39,7 @@ cd backend
 npm install
 
 -Set up the PostgreSQL database (ensure you have PostgreSQL installed):
--createdb film_reviews_db
+-createdb filmnest_db
 
 -Create a .env file in the backend directory and add:
 DATABASE_URL=your_postgresql_connection_string
