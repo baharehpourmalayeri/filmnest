@@ -39,7 +39,7 @@ cd backend
 npm install
 
 -Set up the PostgreSQL database (ensure you have PostgreSQL installed):
--createdb filmnest_db
+-createdb filmnest
 
 -Create a .env file in the backend directory and add:
 DATABASE_URL=your_postgresql_connection_string
