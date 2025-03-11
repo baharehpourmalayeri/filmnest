@@ -32,7 +32,7 @@ Backend
 
 1. Clone the Repository:
 
-git clone https://github.com/yourusername/filmnest.git
+git clone https://github.com/yourusername/filmnest-vue-project.git
 cd filmnest
 
 2. Set Up the Backend
