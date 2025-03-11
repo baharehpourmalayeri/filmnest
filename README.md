@@ -6,22 +6,27 @@ A dynamic film review platform built with Vue 3, a PostgreSQL database and Expre
 
 Frontend
 
-  ✅ Vue 3 – Modern JavaScript framework
+  ✅ Vue.js
   
-  ✅ Vue Router – Handles navigation between pages
+  ✅ Vue Router
+
+  ✅ TypeScript
+
+  ✅ Vite
   
   ✅ Swiper.js – Interactive sliders for featured films
 
 Backend
 
-  ✅ Express.js – Server framework for handling requests
-  
-  ✅ PostgreSQL (pg) – Database for storing film reviews
-  
-  ✅ Dotenv – Manages environment variables
-  
-  ✅ CORS – Enables cross-origin requests
+  ✅ Express.js 
 
+  ✅ Node.js
+  
+  ✅ PostgreSQL 
+  
+  ✅ Dotenv 
+  
+  ✅ CORS 
 
 🔧 How to Set Up and Run the Project
 
